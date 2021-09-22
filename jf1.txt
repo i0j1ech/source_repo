@@ -1,0 +1,12 @@
+properties([githubProjectProperty(displayName: '', projectUrlStr: 'git@github.com:i0j1ech/source_repo.git/'), pipelineTriggers([githubPush()])])
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
