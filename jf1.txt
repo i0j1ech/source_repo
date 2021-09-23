@@ -3,10 +3,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'building app'
+            }         
+        }
+        
+        
+        stage('Run deploy job'){
+            steps{
+                build wait: false, job: 'trainingtask_deploy_to_web'
             }
         }
+        
     }
 }
